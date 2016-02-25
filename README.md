@@ -4,7 +4,7 @@ To use it, you'll need:
 
 * `npm` for package management
 * A Golang dev environment
-* [gin](https://github.com/codegangsta/gin)
+* [gin](https://github.com/codegangsta/gin) for live reloading Go web app.
 
 ```
 npm install
