@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run frontend & npm run backend",
     "frontend": "webpack --watch",
-    "backend": "cd backend; gin"
+    "backend": "cd backend; go run main.go"
   },
   "devDependencies": {
     "babel-core": "^6.2.1",

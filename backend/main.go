@@ -1,11 +1,24 @@
 package main
 
-import "net/http"
+import (
+	"github.com/gorilla/mux"
+	"github.com/urfave/negroni"
+	"fmt"
+	"net/http"
+)
 
 func main() {
-	http.Handle("/", http.FileServer(http.Dir("./public")))
-	err := http.ListenAndServe(":3001", nil)
-	if err != nil {
-		panic("Error: " + err.Error())
-	}
+	// Create our light-weight web serverish net/http handler
+	n := negroni.Classic()
+
+	// Create your servers router
+	router := mux.NewRouter()
+
+	//router.HandleFunc("/", )
+
+	n.UseHandler(router)
+
+	fmt.Println("Listening on localhost:3000")
+	http.ListenAndServe(":3000", n)
 }
+
